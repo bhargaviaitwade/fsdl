@@ -1,25 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login Form</title>
+    <meta charset="UTF-8">
+    <title>Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="login-container">
     <h2>Login</h2>
-    <form>
-        <input type="text" placeholder="Username" required>
-        <input type="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-        <script>
-  function loginSuccess() {
-    alert("Login Successful!");
-  }
-</script>
 
-    </form>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="validateLogin()">Login</button>
+
+    <p id="message"></p>
 </div>
+
+<script>
+    function validateLogin() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const message = document.getElementById("message");
+
+        // Empty field validation
+        if (username === "" || password === "") {
+            message.style.color = "red";
+            message.innerText = "All fields are required!";
+            return;
+        }
+
+        // Login validation
+        if (username === "admin" && password === "1234") {
+            message.style.color = "green";
+            message.innerText = "Login Successful!";
+        } else {
+            message.style.color = "red";
+            message.innerText = "Invalid Username or Password";
+        }
+    }
+</script>
 
 </body>
 </html>
+
