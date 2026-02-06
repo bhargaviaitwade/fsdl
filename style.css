@@ -34,3 +34,9 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+#message {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
